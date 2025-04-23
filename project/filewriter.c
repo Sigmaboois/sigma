@@ -13,4 +13,5 @@ int writetofile(void)
     fprintf(filew,"%s\n",inputtofile);
     fclose(filew);
     printf("done\n");
+    writetofile();
 }
