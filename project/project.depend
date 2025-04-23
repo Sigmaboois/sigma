@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1745324644 source:d:\sigma\project\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1745411322 source:d:\sigma\project\filewriter.c
+	<stdio.h>
+	<conio.h>
+

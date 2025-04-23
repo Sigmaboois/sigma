@@ -3,6 +3,7 @@
 #include <time.h>
 
 int main() {
+    writetofile();
     int number, guess, attempts;
     char playAgain;
 
