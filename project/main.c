@@ -1,13 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-    // Just a placeholder, you can fill this in with your own logic
-
+void writescoretofile(int user_score) //function to write score to file
+{
+    FILE *filew;
+    filew = fopen("D:\\sigma\\project\\bin\\Debug\\score.txt","a");
+    printf("Your score is %d\n",user_score);
+    fprintf(filew,"%d\n",user_score);
+    fclose(filew);
+    printf("done\n");
+}
 
 int main() {
-    writetofile();
     int number, guess, attempts;
-    char playAgain;
+    char playAgain,user_acceptance_for_file;
 
     do {
         srand(time(0)); // Seed random number generator
@@ -28,6 +34,7 @@ int main() {
             }
 
             attempts++;
+            int score = attempts * number;
 
             if (guess < number) {
                 printf("Too low!\n");
@@ -35,6 +42,14 @@ int main() {
                 printf("Too high!\n");
             } else {
                 printf("You got it in %d tries!\n", attempts);
+                printf("Your score is: %d\n",score);
+                printf("Do you want your score to be written to a text file?(\Y/N\)");
+                scanf(" %c",&user_acceptance_for_file);
+                if (user_acceptance_for_file == 'Y' || user_acceptance_for_file == 'y'){
+                    writescoretofile(score);
+                } else {
+                    break;
+                }
             }
 
         } while (guess != number);
