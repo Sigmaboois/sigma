@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+    // Just a placeholder, you can fill this in with your own logic
+
 
 int main() {
     writetofile();
@@ -16,7 +18,15 @@ int main() {
 
         do {
             printf("Enter your guess: ");
-            scanf("%d", &guess);
+            int result = scanf("%d", &guess);
+
+            // Check if input was not a valid integer
+            if (result != 1) {
+                printf("Not a viable answer.\n");
+                while (getchar() != '\n'); // Clear invalid input
+                continue;
+            }
+
             attempts++;
 
             if (guess < number) {
@@ -26,6 +36,7 @@ int main() {
             } else {
                 printf("You got it in %d tries!\n", attempts);
             }
+
         } while (guess != number);
 
         printf("Play again? (y/n): ");
