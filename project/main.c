@@ -4,7 +4,7 @@
 void writescoretofile(int user_score) //function to write score to file
 {
     FILE *filew;
-    filew = fopen("D:\\sigma\\project\\bin\\Debug\\score.txt","a");
+    filew = fopen("score.txt","a");
     printf("Your score is %d\n",user_score);
     fprintf(filew,"%d\n",user_score);
     fclose(filew);
