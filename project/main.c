@@ -3,12 +3,12 @@
 #include <time.h>
 void writescoretofile(int user_score) //function to write score to file
 {
-    FILE *filew;
-    filew = fopen("score.txt","a");
+    FILE *filew = fopen("score.txt","a");
+    fopen("score.txt","a");
     printf("Your score is %d\n",user_score);
     fprintf(filew,"%d\n",user_score);
     fclose(filew);
-    printf("done\n");
+    printf("Done.\n");
 }
 
 int main() {
